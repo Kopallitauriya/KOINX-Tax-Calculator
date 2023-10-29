@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import FAQSection from "./components/FAQSection";
+import TaxCalculator from "./components/taxCalculator";
+import styled from "styled-components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper className="App">
+      <TaxCalculator/>
+      <FAQSection/>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  padding: 2rem 10rem;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5; 
+  @media screen and (max-width: 980px){
+    padding: 0 5rem;
+  }
+
+  @media screen and (max-width: 775px){
+    padding: 0; 
+  }
+
+`;
 
 export default App;
